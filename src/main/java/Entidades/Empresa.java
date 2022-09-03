@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -12,12 +13,20 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Empresa_id")
 
     private int id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "direccion")
     private String direccion;
+    @Column(name = "telefono")
     private int telefono;
+    @Column(name = "NIT")
     private int NIT;
+
+    @OneToMany(mappedBy = "Empresa", cascade = CascadeType.ALL)
+    private List<Empleado> empleado ;
 
     //CONSTRUCTOR VACIO
     public Empresa() {
@@ -34,6 +43,14 @@ public class Empresa {
 
 
     //SET AND GET
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

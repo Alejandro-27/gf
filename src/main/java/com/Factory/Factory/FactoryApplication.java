@@ -1,6 +1,6 @@
 package com.Factory.Factory;
 
-import Entidades.Empresa;
+//import Entidades.Empresa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,14 +16,14 @@ public String gomez(){
 	return "Haciendo pruevas con Spring boot";
 }
 
-	@GetMapping("/prueba")
+	/*@GetMapping("/prueba")
 
 	public String prueba(){
 	Empresa pru = new Empresa("Factory ", "Villavicencio-Colombia", 000000, 123456789);
 
 
 	return "La empresa " + pru.getNombre() + "de la ciudad " + pru.getDireccion();
-	}
+	}*/
 
 
 
